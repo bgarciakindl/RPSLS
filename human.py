@@ -1,5 +1,5 @@
 from player import Player
-import random
+
 from time import sleep
 
 class Human(Player):
@@ -8,4 +8,6 @@ class Human(Player):
         pass
 
     def choose_gesture(self):
+        print(self.gesture_list)
         self.selection = input("Please select a gesture: ")
+
