@@ -20,7 +20,8 @@ class Game:
     
     def player_selection(self,player_number):
         player_number= input("Please Select the number of human players 1 or 2: ")
-        
+        return player_number
+    
     def play_game (self):
         pass
     
