@@ -1,4 +1,5 @@
-from operator import truediv
+
+from calendar import c
 from player import Player
 
 from time import sleep
@@ -10,7 +11,9 @@ class Human(Player):
         
 
     def choose_gesture(self):
-        gesture_selected = input("Please select a gesture (0)Rock,(1)Paper,(2)Scissors,(3)Lizard,(4)Spock: ")
-        self.selection = gesture_selected
-        print (f"{self.name} has picked {self.selection}")
-        
+        self.selection = input("Please select a gesture (0)Rock,(1)Paper,(2)Scissors,(3)Lizard,(4)Spock: ")
+        gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
+        sleep(1)
+        print (f"Player has picked {gesture_list [int(self.selection)]}")
+
+    

@@ -12,4 +12,4 @@ class AI(Player):
         self.selection = str(random.radiant(0,4))
         gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
         sleep(1)
-        print (f"{self.name} has picked {gesture_list [int(self.selection)]}")
+        print (f"Player has picked {gesture_list [int(self.selection)]}")
