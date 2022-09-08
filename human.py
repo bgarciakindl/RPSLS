@@ -15,5 +15,6 @@ class Human(Player):
         gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
         sleep(1)
         print (f"Player has picked {gesture_list [int(self.selection)]}")
+        return self.selection
 
     
