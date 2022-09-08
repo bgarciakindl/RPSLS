@@ -5,9 +5,8 @@ import random
 class AI(Player):
     def __init__(self) :
         super().__init__()
-        self.score = 0
         self.name = ""
-        pass
+        
 
     def choose_gesture(self):
         self.selection = str(random.radiant(0,4))
