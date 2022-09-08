@@ -1,4 +1,5 @@
 import imp
+from socket import AI_CANONNAME
 from time import sleep
 from human import Human
 from ai import AI
@@ -18,12 +19,23 @@ class Game:
             print(rule)
             sleep (.5)
     
-    def player_selection(self,player_number):
-        player_number= input("Please Select the number of human players 1 or 2: ")
+    def player_selection(self,player_number,player_one,player_two):
+        player_number= input("Please Select the number of human players 1 or 2 or 3 for a surprise: ")
+        if player_number == 1:
+            player_one = human_one
+            player_two = ai_one
+        elif player_number == 2:
+            player_one = human_one
+            player_two = human_two
+        else:
+            player_one = ai_one
+            player_two = ai_two
+        
         return player_number
+
     
     def play_game (self):
-        pass
+      pass
     
     def display_winner():
         pass
