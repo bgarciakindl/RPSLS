@@ -6,6 +6,8 @@ from time import sleep
 class Human(Player):
     def __init__(self) -> None:
         super().__init__()
+        self.score = 0
+        self.name = ""
         pass
 
     def choose_gesture(self,valid_selection):
@@ -17,16 +19,16 @@ class Human(Player):
             if self.human.selection == 0:
                 print ("You have chosen Rock")
                 valid_selection == True
-            elif self.human.seleciton ==1:
+            elif self.human_seleciton ==1:
                 print ("You have chosen Paper")
                 valid_selection == True
-            elif self.human.seleciton ==2:
+            elif self.human_seleciton ==2:
                 print("You have chosen Scissors")
                 valid_selection == True
-            elif self.human.seleciton ==3:
+            elif self.human_seleciton ==3:
                 print ("You have chosen Lizard")
                 valid_selection == True
-            elif self.human.seleciton ==4:
+            elif self.human_seleciton ==4:
                 print ("You have chosen Spock")
                 valid_selection == True
             else:
