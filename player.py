@@ -3,5 +3,5 @@ class Player:
         self.selection = ""
         self.gesture_list = ["Rock","Paper", "Scissors", "Lizzard","Spock"]
         self.score = 0
-        pass
+        
 
