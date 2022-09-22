@@ -6,19 +6,19 @@ from player import Player
 
 class Game:
     def __init__(self):
-        self.player_one.score = 0
-        self.player_two.score = 0
+        self.player_one = Human ()
+        self.player_two = AI ()
 
     def run_games(self):
         self.print_rules()
         self.player_selection(self.player_one,self.player_two)
-        # while self.player_one.score < 2 and self.player_two.score < 2:
-        #     if self.player_one.score == 2:
-        #         print ("Player One has won the game")
-        #     elif self.player_two.score == 2:
-        #         print("Player Two has won the game")
-        #     else:
-        self.play_game() 
+        while self.player_one.score < 2 and self.player_two.score < 2:
+            if self.player_one.score == 2:
+                print ("Player One Wins")
+            elif self.player_two.score == 2:
+                print ("Player Twon Wins")
+            else:
+                self.play_game() 
         self.declare_winner()
         self.play_again()
     
@@ -28,12 +28,11 @@ class Game:
         for rule in rules_of_game:
             print(rule)
             sleep (.2)
-        #if elif else broke and is no longer recognizing inputs no need third option need three things how to define them and get the routine need them name 
+        
     def player_selection (self,player_one,player_two):
-        # self.player_one.name =
-        # self.player_two.name = 
+        
         player_number= input("Please Select the number of players 1 or 2 or 3 for quick view of the game: ")
-
+        
         if player_number == "1":
             self.player_one= Human()
             self.player_two = AI()
@@ -49,57 +48,51 @@ class Game:
         else:
             print ("Please select one of the available options")
         return self.player_one,self.player_two
-    #needs an else in the above statement
+    
     def play_game(self):
-        #see if this can be condensed so it isn't as long
-        #initialize the players scores outside the while loop double check the names
-        #could I just go from the player selection into the game and not have it go into a seperate function in the run game function that way it gets called immediatly
-        self.player_one.score = 0
-        self.player_two.score = 0
-        while self.player_one.score < 2 & self.player_two.score < 2:
             player_one_gesture = self.player_one.choose_gesture()
             player_two_gesture = self.player_two.choose_gesture()
-            if player_one_gesture == "Rock":
-                if player_two_gesture == "Scissors" or player_two_gesture == "Lizard":
+            if player_one_gesture == "0":
+                if player_two_gesture == "2" or player_two_gesture == "3":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "Paper" or player_two_gesture == "Spock":
+                elif player_two_gesture == "1" or player_two_gesture == "4":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "Paper":
-                if player_two_gesture == "Rock" or player_two_gesture == "Spock":
+            elif player_one_gesture == "1":
+                if player_two_gesture == "0" or player_two_gesture == "4":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "Scissors" or player_two_gesture == "Lizard":
+                elif player_two_gesture == "2" or player_two_gesture == "3":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "Scisors":
-                if player_two_gesture == "Paper" or player_two_gesture == "Lizard":
+            elif player_one_gesture == "2":
+                if player_two_gesture == "1" or player_two_gesture == "3":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "Rock" or player_two_gesture == "Spock":
+                elif player_two_gesture == "0" or player_two_gesture == "4":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "Lizzard":
-                if player_two_gesture == "Scissors" or player_two_gesture == "Spock":
+            elif player_one_gesture == "3":
+                if player_two_gesture == "1" or player_two_gesture == "4":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "Rock" or player_two_gesture == "Scissors":
+                elif player_two_gesture == "0" or player_two_gesture == "2":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
             else:
-                if player_two_gesture == "Scissors" or player_two_gesture == "Rock":
+                if player_two_gesture == "2" or player_two_gesture == "0":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "Paper" or player_two_gesture == "Lizzard":
+                elif player_two_gesture == "1" or player_two_gesture == "3":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
@@ -120,5 +113,4 @@ class Game:
         else:
             print("Thank you for playing!")
     
-    #compare values and add to the score of the winner compare gesture seclection and declare a winner
-    #build one game for multi player and single
+   
