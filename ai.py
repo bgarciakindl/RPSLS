@@ -9,8 +9,10 @@ class AI(Player):
         
 
     def choose_gesture(self):
-        self.gesture = str(random.randint(0,4))
+        self.random_gesture = str(random.randint(0,4))
         gesture_list = ["Rock","Paper","Scissors","Lizard","Spock"]
+
         sleep(1)
-        print (f"Player has picked {gesture_list [int(self.gesture)]}")
-        return self.gesture
+        self.selected_gesture = gesture_list [int(self.random_gesture)]
+        print (f"Player has picked {self.selected_gesture}")
+        return self.selected_gesture

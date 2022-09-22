@@ -33,7 +33,7 @@ class Game:
         
         player_number= input("Please Select the number of players 1 or 2 or 3 for quick view of the game: ")
         
-        if player_number == "1":
+        if player_number == "Paper":
             self.player_one= Human()
             self.player_two = AI()
             print ("You have selected to go against the computer")
@@ -50,49 +50,49 @@ class Game:
         return self.player_one,self.player_two
     
     def play_game(self):
-            player_one_gesture = self.player_one.choose_gesture()
-            player_two_gesture = self.player_two.choose_gesture()
-            if player_one_gesture == "0":
-                if player_two_gesture == "2" or player_two_gesture == "3":
+            self.player_one.choose_gesture()
+            self.player_two.choose_gesture()
+            if self.player_one.selected_gesture == "Rock":
+                if self.player_two.selected_gesture == "Scissors" or self.player_two.selected_gesture == "Lizard":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "1" or player_two_gesture == "4":
+                elif self.player_two.selected_gesture == "Paper" or self.player_two.selected_gesture == "Spock":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "1":
-                if player_two_gesture == "0" or player_two_gesture == "4":
+            elif self.player_one.selected_gesture == "Paper":
+                if self.player_two.selected_gesture == "Rock" or self.player_two.selected_gesture == "Spock":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "2" or player_two_gesture == "3":
+                elif self.player_two.selected_gesture == "Scissors"or self.player_two.selected_gesture == "Lizard":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "2":
-                if player_two_gesture == "1" or player_two_gesture == "3":
+            elif self.player_one.selected_gesture == "Scissors":
+                if self.player_two.selected_gesture == "Paper" or self.player_two.selected_gesture == "Lizard":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "0" or player_two_gesture == "4":
+                elif self.player_two.selected_gesture == "Rock" or self.player_two.selected_gesture == "Spock":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
-            elif player_one_gesture == "3":
-                if player_two_gesture == "1" or player_two_gesture == "4":
+            elif self.player_one.selected_gesture == "Lizard":
+                if self.player_two.selected_gesture == "Paper" or self.player_two.selected_gesture == "Spock":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "0" or player_two_gesture == "2":
+                elif self.player_two.selected_gesture == "Rock" or self.player_two.selected_gesture == "Scissors":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
                     print ("There is no winner of the round")
             else:
-                if player_two_gesture == "2" or player_two_gesture == "0":
+                if self.player_two.selected_gesture == "Scissors"or self.player_two.selected_gesture == "Rock":
                     print ("Player One Wins This Round")
                     self.player_one.score +=1
-                elif player_two_gesture == "1" or player_two_gesture == "3":
+                elif self.player_two.selected_gesture == "Paper" or self.player_two.selected_gesture == "Lizard":
                     print ("Player Two Wins This Round")
                     self.player_two.score +=1
                 else:
