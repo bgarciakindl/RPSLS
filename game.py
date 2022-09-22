@@ -6,39 +6,49 @@ from player import Player
 
 class Game:
     def __init__(self):
-        self.player_one = ""
-        self.player_two = ""
+        self.player_one.score = 0
+        self.player_two.score = 0
 
     def run_games(self):
         self.print_rules()
-        self.player_selection()
+        self.player_selection(self.player_one,self.player_two)
+        # while self.player_one.score < 2 and self.player_two.score < 2:
+        #     if self.player_one.score == 2:
+        #         print ("Player One has won the game")
+        #     elif self.player_two.score == 2:
+        #         print("Player Two has won the game")
+        #     else:
         self.play_game() 
         self.declare_winner()
         self.play_again()
     
-    def print_rules (self): 
+    def print_rules (self):
+    
         rules_of_game = ["Rock crushes Scissors","Scissors cuts Paper","Paper covers Rock","Rock crushes Lizard","Lizard poisons Spock","Spock smashes Scissors","Scissors decapitates Lizard","Lizard eats Paper","Paper disproves Spock","Spock vaporizes Rock"]
         for rule in rules_of_game:
             print(rule)
-            sleep (1)
+            sleep (.2)
         #if elif else broke and is no longer recognizing inputs no need third option need three things how to define them and get the routine need them name 
-    def player_selection (self):
+    def player_selection (self,player_one,player_two):
+        # self.player_one.name =
+        # self.player_two.name = 
         player_number= input("Please Select the number of players 1 or 2 or 3 for quick view of the game: ")
-        if player_number == 1:
-            player_one= Human("player 1")
-            player_two = AI("player 2")
+
+        if player_number == "1":
+            self.player_one= Human()
+            self.player_two = AI()
             print ("You have selected to go against the computer")
-        elif player_number == 2:
-           player_one = Human ("player 1")
-           player_two = Human ("player 2")
+        elif player_number == "2":
+           self.player_one = Human ()
+           self.player_two = Human ()
            print ("You have selected to go against another human")
-        elif player_number == 3:
-            player_one = AI("player 1")
-            player_two = AI("player 2")
+        elif player_number == "3":
+            self.player_one = AI()
+            self.player_two = AI()
             print ("You have selected to watch 2 computers play for testing purposes")
         else:
             print ("Please select one of the available options")
-        
+        return self.player_one,self.player_two
     #needs an else in the above statement
     def play_game(self):
         #see if this can be condensed so it isn't as long
